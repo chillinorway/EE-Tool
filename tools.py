@@ -12,7 +12,7 @@ Samling av verktøy for elmek
 def nr_build_ups(bundle_dia:float, target_dia:float, heat_shrink_thickness:float):
     """
     Kalkulere antall krympestrømper som skal til for å
-    bygge opp fra bunt diameter til bakende på konnektor
+    bygge opp fra buntdiameter til bakende på konnektor
                                             *********
                                             *       *
             --------------------------------        *
@@ -28,3 +28,24 @@ def nr_build_ups(bundle_dia:float, target_dia:float, heat_shrink_thickness:float
 
 
 print(nr_build_ups(bundle_dia=10.5, target_dia=30.6, heat_shrink_thickness=2.2))
+
+
+
+start_t = 1
+stop_t = 2.2
+
+bundle_dia = 10.5
+target_dia = 30.6
+
+i = 0
+build_dia = bundle_dia
+
+while build_dia <= target_dia:
+    i+=1
+    fac = target_dia / build_dia
+    thickness = fac * stop_t
+    build_dia = build_dia + (thickness*2)
+    print(build_dia)
+
+print(i)
+
